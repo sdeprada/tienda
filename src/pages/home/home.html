@@ -1,14 +1,34 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Mi Tienda
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 *ngFor="let producto of productosProv.productos">
+                <ion-card>
+                    <img [src]="producto.codigo | imagen" />
+                    <ion-card-content (click)="irDetalle(producto)">
+                        <ion-card-title text-wrap style="font-size:12px">
+                            {{producto.producto}}
+                        </ion-card-title>
+                        <p>
+                            {{producto.precio_compra | currency}}
+                        </p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-infinite-scroll (ionInfinite)="siguientePag($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
 </ion-content>

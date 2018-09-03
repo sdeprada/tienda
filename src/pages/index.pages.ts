@@ -1,0 +1,9 @@
+export { ProductoPage } from './producto/producto';
+export { PorCategoriasPage } from './por-categorias/por-categorias';
+export { HomePage } from './home/home';
+export { CategoriasPage } from './categorias/categorias';
+export { CarritoPage } from './carrito/carrito';
+export { LoginPage } from './login/login';
+export { OrdenesPage } from './ordenes/ordenes';
+export { OrdenesDetallePage } from './ordenes-detalle/ordenes-detalle';
+export { TabsPage } from './tabs/tabs';
